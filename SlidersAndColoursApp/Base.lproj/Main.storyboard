@@ -103,7 +103,7 @@
                                                 <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                                 <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="redSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="pfi-Ju-RXb"/>
+                                                    <action selector="rgbChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="SkA-Lh-E18"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.58999999999999997" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="thH-1g-R7m">
@@ -114,7 +114,7 @@
                                                 <color key="minimumTrackTintColor" red="0.20392156862745098" green="0.75145038606262815" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="greenSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="pnp-2D-rCu"/>
+                                                    <action selector="rgbChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="aOw-5l-Vkt"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="KLh-fi-zn9">
@@ -125,7 +125,7 @@
                                                 <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                                 <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="blueSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="CgC-jh-1gw"/>
+                                                    <action selector="rgbChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="HKd-B2-Uqp"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
