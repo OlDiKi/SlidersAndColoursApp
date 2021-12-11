@@ -4,7 +4,7 @@
 //
 //  Created by Дмитрий Олейнер on 10.12.2021.
 //
-
+import Foundation
 import UIKit
 
 class ViewController: UIViewController {
@@ -23,25 +23,33 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 10
         
-        redColourSlider.value = 0.29
-        redColourSlider.minimumValue = 0
         redColourSlider.maximumValue = 1.0
+        redColourSlider.minimumValue = 0.0
         
-        greenColourSlider.value = 0.59
-        greenColourSlider.minimumValue = 0
         greenColourSlider.maximumValue = 1.0
+        greenColourSlider.minimumValue = 0.0
         
-        blueColourSlider.value = 1.00
-        blueColourSlider.minimumValue = 0
         blueColourSlider.maximumValue = 1.0
+        blueColourSlider.minimumValue = 0.0
         
-        redColourValue.text = String(redColourSlider.value)
-        greenColourValue.text = String(greenColourSlider.value)
-        blueColourValue.text = String(blueColourSlider.value)    }
+    }
 
 
     @IBAction func redSliderAction() {
-        redColourValue.text = String(redColourSlider.value)
-            }
+        redColourValue.text = String(format: "%.2f", redColourSlider.value)
+        let redSlider = CGFloat(redColourSlider.value)
+        colorView.backgroundColor = colorView.backgroundColor?.withAlphaComponent(redSlider)
+    }
+    @IBAction func greenSliderAction() {
+        greenColourValue.text = String(format: "%.2f", greenColourSlider.value)
+        let greenSlider = CGFloat(greenColourSlider.value)
+        colorView.backgroundColor = colorView.backgroundColor?.withAlphaComponent(greenSlider)
+    }
+    @IBAction func blueSliderAction() {
+        blueColourValue.text = String(format: "%.2f", blueColourSlider.value)
+        let blueSlider = CGFloat(blueColourSlider.value)
+        colorView.backgroundColor = colorView.backgroundColor?.withAlphaComponent(blueSlider)
+    }
+    
+    
 }
-
