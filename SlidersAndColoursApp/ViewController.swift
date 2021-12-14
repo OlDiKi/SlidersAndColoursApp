@@ -21,34 +21,46 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         colorView.layer.cornerRadius = 10
         
-        redColourValue.text = String("0.30")
-        greenColourValue.text = String("0.60")
-        blueColourValue.text = String("1.0")
+        redColourSlider.minimumTrackTintColor = .red
+        greenColourSlider.minimumTrackTintColor = .green
         
-        redColourSlider.value = 0.30
-        redColourSlider.maximumValue = 1.0
-        redColourSlider.minimumValue = 0.0
-        
-        greenColourSlider.value = 0.60
-        greenColourSlider.maximumValue = 1.0
-        greenColourSlider.minimumValue = 0.0
-        
-        blueColourSlider.value = 1.0
-        blueColourSlider.maximumValue = 1.0
-        blueColourSlider.minimumValue = 0.0
-        
+        changeColour()
+        setValue(for: redColourValue, greenColourValue, blueColourValue)
+
     }
 
-    func changeColour() {
+    private func changeColour() {
     colorView.backgroundColor = UIColor(red: CGFloat(redColourSlider.value), green: CGFloat(greenColourSlider.value), blue: CGFloat(blueColourSlider.value), alpha: 1)
         
     
 }
-    @IBAction func rgbChanged(_ sender: Any) {
+    @IBAction func rgbChanged(_ sender: UISlider) {
         changeColour()
-        redColourValue.text = String(format: "%.2f", redColourSlider.value)
-        greenColourValue.text = String(format: "%.2f", greenColourSlider.value)
-        blueColourValue.text = String(format: "%.2f", blueColourSlider.value)    }
+        
+        switch sender {
+        case redColourSlider: setValue(for: redColourValue)
+        case greenColourSlider: setValue(for: greenColourValue)
+        default: setValue(for: blueColourValue)
+        }
+    }
+    
+private func setValue(for values: UILabel...) {
+    values.forEach { value in
+        switch value {
+        case redColourValue:
+            value.text = string(from: redColourSlider)
+        case greenColourValue:
+            value.text = string(from: greenColourSlider)
+        default:
+            value.text = string(from: blueColourSlider)
+        }
+    }
+}
+
+    private func string(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
+    }
 }
